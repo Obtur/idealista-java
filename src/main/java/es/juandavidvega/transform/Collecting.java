@@ -1,19 +1,18 @@
 package es.juandavidvega.transform;
 
-import java.util.Comparator;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
-import static java.util.stream.Collectors.maxBy;
+import java.util.List;
 
 public class Collecting {
 
-    /**
-     * A list
-     * Complex Collector --> Anuncio más caro activo y anuncio más caro desactivado
-     * Joining Strings
-     */
+    public List<Ad> getAFilterListOfAdsByPrice() {
+        return null;
+    }
+
+    public String eachTypologyAndPriceAD() {
+        return null;
+    }
+
+
 
 
 }
