@@ -9,7 +9,9 @@ public class Sample {
 
         //Never Must be null
         System.out.println(stuff.maybeEmptyMap().getText());
-
+        System.out.println(stuff.getTheTextLargeThan8().getText());
+        System.out.println(stuff.noATextOnRepository().getText());
+        System.out.println(stuff.parseRequestDate());
 
     }
 }
