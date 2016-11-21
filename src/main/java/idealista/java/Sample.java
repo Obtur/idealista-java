@@ -1,6 +1,6 @@
-package es.juandavidvega;
+package idealista.java;
 
-import es.juandavidvega.optional.OptionalStuff;
+import idealista.java.optional.OptionalStuff;
 
 public class Sample {
 

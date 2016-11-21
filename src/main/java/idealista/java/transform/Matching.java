@@ -1,8 +1,4 @@
-package es.juandavidvega.transform;
-
-import static es.juandavidvega.transform.Ad.sampleLargeListOfAds;
-
-import java.util.Optional;
+package idealista.java.transform;
 
 public class Matching {
     /**

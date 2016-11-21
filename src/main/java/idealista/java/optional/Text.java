@@ -1,4 +1,4 @@
-package es.juandavidvega.optional;
+package idealista.java.optional;
 
 public class Text {
 

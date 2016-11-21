@@ -1,4 +1,4 @@
-package es.juandavidvega.optional;
+package idealista.java.optional;
 
 
 import java.util.Optional;
