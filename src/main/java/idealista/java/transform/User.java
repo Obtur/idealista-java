@@ -25,6 +25,25 @@ public class User {
 		return phone;
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		User user = (User) o;
+
+		if (!name.equals(user.name)) return false;
+		return phone.equals(user.phone);
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = name.hashCode();
+		result = 31 * result + phone.hashCode();
+		return result;
+	}
+
 	public static String randomName() {
 		return NAMES.get(RANDOM.nextInt(NAMES.size()));
 	}

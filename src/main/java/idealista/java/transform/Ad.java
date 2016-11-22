@@ -15,27 +15,39 @@ import static java.util.stream.IntStream.range;
 public class Ad {
 	private static final Random random = new Random();
 	private final User user;
-	private final LocalDate localDateTime;
+	private final LocalDate publicationDate;
 	private final Typology typology;
-	private final Operation rent;
+	private final Operation operation;
 	private final Double price;
 	private final Boolean active;
 
-	public Ad(User user, LocalDate localDateTime, Typology typology, Operation rent, Double price) {
-		this(user, localDateTime, typology, rent, price, true);
+	public Ad(User user, LocalDate publicationDate, Typology typology, Operation operation, Double price) {
+		this(user, publicationDate, typology, operation, price, true);
 	}
 
-	private Ad(User user, LocalDate localDateTime, Typology typology, Operation rent, Double price, Boolean isActive) {
+	private Ad(User user, LocalDate publicationDate, Typology typology, Operation operation, Double price, Boolean isActive) {
 		this.user = user;
-		this.localDateTime = localDateTime;
+		this.publicationDate = publicationDate;
 		this.typology = typology;
-		this.rent = rent;
+		this.operation = operation;
 		this.price = price;
 		this.active = isActive;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public LocalDate getPublicationDate() {
+		return publicationDate;
+	}
+
 	public Typology getTypology() {
 		return typology;
+	}
+
+	public Operation getOperation() {
+		return operation;
 	}
 
 	public Double getPrice() {
@@ -47,7 +59,7 @@ public class Ad {
 	}
 
 	public Ad deactivate() {
-		return new Ad(user, localDateTime, typology, rent, price, false);
+		return new Ad(user, publicationDate, typology, operation, price, false);
 	}
 
 	public enum Typology {
@@ -56,6 +68,32 @@ public class Ad {
 
 	public enum Operation {
 		Sale, Rent
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Ad ad = (Ad) o;
+
+		if (!user.equals(ad.user)) return false;
+		if (!publicationDate.equals(ad.publicationDate)) return false;
+		if (typology != ad.typology) return false;
+		if (operation != ad.operation) return false;
+		if (!price.equals(ad.price)) return false;
+		return active.equals(ad.active);
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = user.hashCode();
+		result = 31 * result + publicationDate.hashCode();
+		result = 31 * result + typology.hashCode();
+		result = 31 * result + operation.hashCode();
+		result = 31 * result + price.hashCode();
+		return 31 * result + active.hashCode();
 	}
 
 	public static List<Ad> sampleLargeListOfAds() {
