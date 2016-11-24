@@ -13,6 +13,7 @@ import static idealista.java.transform.Ad.Typology;
 import static java.util.Arrays.asList;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.assertThat;
 
 public class IKnowHowToUseStreamsIf {
