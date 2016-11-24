@@ -27,6 +27,13 @@ public class IKnowHowToUseStreamsIf {
 	);
 
 	@Test
+	public void i_can_sum_the_price_of_all_the_ads() {
+		double totalPrice = 0;
+
+		assertThat(totalPrice, is(closeTo(300896d, 0.0001)));
+	}
+
+	@Test
 	public void i_can_find_all_different_users_with_name_Juan() {
 		List<User> users = new ArrayList<>();
 
