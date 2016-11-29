@@ -4,8 +4,13 @@ import idealista.java.transform.Ad;
 import idealista.java.transform.User;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
+
+import static java.util.Comparator.comparingDouble;
+import static java.util.stream.Collectors.*;
 
 /**
  * Created by acuervo on 29/11/16.
@@ -42,8 +47,12 @@ public class ImTheFuckingJava8Master {
                 .collect(Collectors.toList());
     }
 
-    public List<Ad> findTowAdsWithSamePrice(List<Ad> ads) {
+    public List<Ad> findTwoAdsWithSamePrice(List<Ad> ads) {
         return ads.stream()
-                .
+                .collect(groupingBy(Ad::getPrice))
+                .values().stream()
+                .filter(e -> e.size() > 1)
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
     }
 }

@@ -5,7 +5,6 @@ import idealista.java.transform.User;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import static idealista.java.transform.Ad.Operation;
@@ -67,7 +66,7 @@ public class IKnowHowToUseStreamsIf {
 
 	@Test
 	public void i_can_find_two_ads_with_the_same_price() {
-		List<Ad> adsWithSamePrice = imTheFuckingJava8Master.findTowAdsWithSamePrice(ads);
+		List<Ad> adsWithSamePrice = imTheFuckingJava8Master.findTwoAdsWithSamePrice(ads);
 
 		assertThat(adsWithSamePrice, containsInAnyOrder(
 				new Ad(new User("Rubén", "34928411238"), LocalDate.of(2011, 1, 3), Typology.Office, Operation.Sale, 23d),
